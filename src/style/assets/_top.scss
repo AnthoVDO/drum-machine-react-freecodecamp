@@ -1,0 +1,15 @@
+.top {
+    display: grid;
+    grid-template-columns: 40% 20% 10% 30%;
+    width: 100%;
+}
+
+h1,
+.screen,
+.led,
+h2 {
+    vertical-align: middle;
+    line-height: 2em;
+    text-align: center;
+    display: inline;
+}

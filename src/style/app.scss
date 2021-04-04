@@ -1,0 +1,15 @@
+@import "./settings";
+@import "./assets/top";
+@import "./assets/left";
+@import "./assets/right";
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
