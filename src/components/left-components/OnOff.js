@@ -2,7 +2,7 @@ import React from 'react';
 
 const OnOff = () => {
     return (
-        <div>
+        <div className="onOff">
           <button>On/Off</button>
         </div>
     );

@@ -2,9 +2,12 @@ import React from 'react';
 
 const Pad = () => {
     return (
-        <div>
-            <button>Q</button>
+        <div className="pad">
+            <button>
+            <h5>Q</h5>
             <p>Do</p>
+            </button>
+            
         </div>
     );
 };
