@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Volume = () => {
+const Volume = ({audioVolume, onChangeVolume}) => {
+
+    
+
+
     return (
         <div className="volume">
-            <input type="range" name="volume" id="volume" className="volume_bare"/>
+            <input type="range" min="0" max="10" value={audioVolume} name="volume" id="volume" className="volume_bare" onChange={onChangeVolume}/>
         </div>
     );
 };

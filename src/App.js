@@ -178,12 +178,13 @@ function App() {
 
       
     }}
-
-
   const[selector, setSelector] = useState(index.drum);
   const[onOff, setOnOff] = useState(true);
+  const[display, setDisplay] = useState("");
+  const[audioVolume, setAudioVolume] = useState(5);
 
   const handleSelector = (e) => {
+    
     switch(e.target.dataset.selector){
       case "drum":
       return  setSelector(index.drum);
@@ -200,16 +201,19 @@ function App() {
     return setOnOff(!onOff);
   }
 
+  const onChangeVolume = (e) => {
+    console.log(audioVolume);
+    setAudioVolume(e.target.value);
+  }
 
-
-
+  
 
 
   return (
     <div className="App">
     <div className="wraps" id="drum-machine">
-       <Top onOff={onOff}/>
-    <Center index={index} selector={selector} onOff={onOff} handleSelector={handleSelector} handleOnOff={handleOnOff}/>
+       <Top onOff={onOff} display={display}/>
+    <Center index={index} selector={selector} onOff={onOff} handleSelector={handleSelector} handleOnOff={handleOnOff} setDisplay={setDisplay} audioVolume={audioVolume} onChangeVolume={onChangeVolume}/>
     <div className="footer">
 <h3 >Made for FreeCodeCamp Front end libraries section</h3>
     </div>
