@@ -1,13 +1,32 @@
 import React from 'react';
 
-const Pad = () => {
+const Pad = ({onOff, name, src, id, keyboard}) => {
+
+    
+    
+
+    const handleClick = () => {
+        let audio;
+    if(onOff === true){
+        audio = new Audio(src);
+        return audio.play();
+    }else{
+        return null
+    }
+        
+    }
+
+
+
+
+
     return (
-        <div className="pad">
-            <button>
-            <h5>Q</h5>
-            <p>Do</p>
-            </button>
-            
+        <div className="pad drum-pad" id={id}>
+            <button onClick={handleClick} >
+            <audio src={src} ></audio>
+            <h5>{keyboard}</h5>
+            <p>{name}</p>
+            </button>    
         </div>
     );
 };

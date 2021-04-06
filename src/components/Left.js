@@ -3,11 +3,11 @@ import OnOff from "./left-components/OnOff";
 import Selector from "./left-components/Selector";
 import Volume from "./left-components/Volume";
 
-const Left = () => {
+const Left = ({handleSelector, handleOnOff}) => {
     return (
         <div className="left">
-        <OnOff />
-        <Selector />
+        <OnOff handleOnOff={handleOnOff} />
+        <Selector handleSelector={handleSelector}/>
         <Volume />
             
         </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const OnOff = () => {
+const OnOff = ({handleOnOff}) => {
     return (
         <div className="onOff">
-          <button>On/Off</button>
+          <button onClick={handleOnOff}>On/Off</button>
         </div>
     );
 };
