@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Center from "./components/Center";
 import Top from "./components/Top";
 import "./style/app.scss";
@@ -82,7 +82,8 @@ function App() {
           name:"C",
           src:'./sound/piano/C.mp3',
           keyboard:'E'
-        },D:{
+        },
+        D:{
           id:"13",
           name:"D",
           src:'./sound/piano/D.mp3',
@@ -206,6 +207,35 @@ function App() {
     setAudioVolume(e.target.value);
   }
 
+  const handleKeyDown = (e) => {
+let keyPressed = e.key.toUpperCase().toString();
+Object.entries(selector).map(element=>{
+  
+  
+  if(element[1].keyboard === keyPressed){
+    let audio;
+    if(onOff === true){
+        audio = document.getElementById(element[1].keyboard);
+        setDisplay(element[1].name);
+        audio.volume = audioVolume/10;
+        return audio.play() ;
+    }else{
+        return null
+    }
+  }else{
+    return null;
+  }
+})
+  }
+
+  useEffect(()=>{
+document.addEventListener('keydown', handleKeyDown);
+return () => {
+ document.removeEventListener('keydown', handleKeyDown);
+}
+  }
+
+  )
   
 
 

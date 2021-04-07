@@ -1,17 +1,16 @@
 import React from 'react';
 
-const Pad = ({onOff, name, src, id, keyboard, setDisplay, audioVolume}) => {
+const Pad = ({onOff, name, src, id, keyboard, setDisplay, audioVolume, selector}) => {
 
     
     
 
     const handleClick = (e) => {
-        
         let audio;
     if(onOff === true){
-        audio = new Audio(src);
+        audio = document.getElementById(keyboard);
+        console.log(audio)
         setDisplay(e.currentTarget.dataset.display);
-        console.log(e.currentTarget);
         audio.volume = audioVolume/10;
         return audio.play() ;
     }else{
@@ -23,13 +22,12 @@ const Pad = ({onOff, name, src, id, keyboard, setDisplay, audioVolume}) => {
 
 
     return (
-        <div className="pad drum-pad" id={id}  >
-            <button onClick={handleClick} data-display={name} >
-            <audio src={src}></audio>
-            <h5>{keyboard}</h5>
-            <p>{name}</p>
+        
+            <button onClick={handleClick} data-display={name} className="drum-pad" id={selector+name} >
+            <audio src={src} className="clip" id={keyboard}></audio>
+            {keyboard}
             </button>    
-        </div>
+        
     );
 };
 
