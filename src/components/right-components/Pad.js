@@ -9,9 +9,9 @@ const Pad = ({onOff, name, src, id, keyboard, setDisplay, audioVolume, selector}
         let audio;
     if(onOff === true){
         audio = document.getElementById(keyboard);
-        console.log(audio)
         setDisplay(e.currentTarget.dataset.display);
         audio.volume = audioVolume/10;
+        audio.currentTime = 0
         return audio.play() ;
     }else{
         return null
@@ -23,7 +23,7 @@ const Pad = ({onOff, name, src, id, keyboard, setDisplay, audioVolume, selector}
 
     return (
         
-            <button onClick={handleClick} data-display={name} className="drum-pad" id={selector+name} >
+            <button onClick={handleClick} data-display={name} className={onOff=== true ? "drum-pad drum-pad__on" : "drum-pad"} id={selector+name} >
             <audio src={src} className="clip" id={keyboard}></audio>
             {keyboard}
             </button>    

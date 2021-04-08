@@ -218,6 +218,7 @@ Object.entries(selector).map(element=>{
         audio = document.getElementById(element[1].keyboard);
         setDisplay(element[1].name);
         audio.volume = audioVolume/10;
+        audio.currentTime = 0
         return audio.play() ;
     }else{
         return null

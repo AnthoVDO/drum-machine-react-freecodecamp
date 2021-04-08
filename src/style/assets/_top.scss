@@ -9,6 +9,7 @@
 h1,
 .screen,
 .led,
+.screen__off,
 h2 {
     text-align: center;
     margin-top: auto;
@@ -20,6 +21,7 @@ h2 {
     width: 15px;
     height: 15px;
     margin: auto;
+    border-radius: 50%;
 }
 
 .led__red {
@@ -28,4 +30,36 @@ h2 {
 
 .led__green {
     background-color: rgb(34, 161, 2);
+}
+
+h1 {
+    font-size: 1.7em;
+    color: $color-title-main;
+}
+
+h2 {
+    font-size: 1em;
+    color: $color-title-copyright;
+}
+
+.screen {
+    min-height: 2.12em;
+    font-size: 0.8em;
+    border: 2px solid #4d0000;
+    border-radius: 5px;
+    background-color: #830000;
+    color: $color-title-main;
+    text-transform: uppercase;
+    position: relative;
+    padding-top: 3px;
+}
+
+.screen__off {
+    min-height: 1em;
+    font-size: 0.8em;
+    border-radius: 5px;
+    background-color: black;
+    line-height: 2em;
+    margin: 0.65em 0;
+    border: 2px solid #4d0000;
 }

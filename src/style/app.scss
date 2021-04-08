@@ -3,6 +3,7 @@
 @import "./assets/left";
 @import "./assets/right";
 @import "./assets/center";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 .App {
     display: flex;
     flex-direction: column;
@@ -13,16 +14,22 @@
     width: 100%;
     margin: auto;
     height: 100vh;
+    background-color: $background-main;
+    font-family: 'Poppins', sans-serif;
 }
 
 .wraps {
     width: 80%;
     height: 50%;
     max-width: 1400px;
+    border-radius: 5px;
+    background-color: $background-drum-machine;
+    padding: 15px;
 }
 
 .footer {
     text-align: center;
     margin: 40px 0;
     height: 10%;
+    color: $color-title-copyright;
 }
